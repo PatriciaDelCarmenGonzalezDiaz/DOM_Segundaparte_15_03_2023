@@ -1,7 +1,13 @@
-let boton = document.querySelector("#btn");
-let accion = () => alert("Hola, Presionaste un botón");
-let alternar = () => boton.classList.toggle("red");
+class eventManager {
+    constructor(element) {
+        element.addEventListener("click", this.enviarMensaje);
+    }
 
-boton.addEventListener("click", accion);
-boton.addEventListener("click", alternar);
-boton.removeEventListener("click", accion);
+    enviarMensaje() {
+        alert("Hola, Presionaste Un Botón");
+        console.log(this);
+    }
+}
+
+let boton = document.querySelector("#btn");
+let em = new eventManager(boton);
