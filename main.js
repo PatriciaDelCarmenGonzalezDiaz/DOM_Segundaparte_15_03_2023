@@ -1,13 +1,8 @@
-class eventManager {
-    constructor(element) {
-        element.addEventListener("click", () => this.enviarMensaje.bind());
-    }
-
-    enviarMensaje() {
-        alert("Hola, Presionaste Un Botón");
-        console.log(this);
+let boton = document.querySelector("#btn");
+let eventManager = {
+    handleEvent: function(event) {
+        alert("Hola, Has presionado un Botón");
     }
 }
 
-let boton = document.querySelector("#btn");
-let em = new eventManager(boton);
+boton.addEventListener("click",eventManager);
