@@ -1,3 +1,4 @@
 let boton = document.querySelector("#btn");
-let hacerAlgo = () => alert("Hola, presionaste el botón");
-boton.setAttribute("onclick","hacerAlgo()");
+boton.addEventListener("click", (evento) => {
+    alert("Hola, Presionaste un botón");
+})
