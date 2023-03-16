@@ -7,5 +7,7 @@ boton.addEventListener("click", (event) => {
 });
 
 root.addEventListener("warning", (event) => {
-  console.log("Evento click recibido en el root.", event);
-});
+    console.log("Evento click recibido en el root.");
+    let path = event.composedPath();
+    console.log(path);
+  });
