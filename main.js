@@ -1,11 +1,6 @@
-let boton = document.querySelector("#btn");
 let texto = document.querySelector(".text");
 
-boton.addEventListener("click", ()=>{
-    alert("Hola, Has Presionado Un Botón");
-});
-
-texto.addEventListener("mouseenter", () => {
-   let event = new Event("click");
-   boton.dispatchEvent(event);
+document.body.addEventListener("click", (event)=> {
+    let {x,y,detail} = event;
+    texto.textContent = `Has hecho ${detail} CLICK en las coordenadas (${x} y ${y})`;
 });
