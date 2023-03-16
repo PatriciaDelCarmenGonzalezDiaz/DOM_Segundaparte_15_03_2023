@@ -1,6 +1,6 @@
 class eventManager {
     constructor(element) {
-        element.addEventListener("click", this.enviarMensaje.bind(this));
+        element.addEventListener("click", () => this.enviarMensaje.bind());
     }
 
     enviarMensaje() {
