@@ -1,4 +1,5 @@
 let boton = document.querySelector("#btn");
-boton.addEventListener("click", (evento) => {
+function accion() {
     alert("Hola, Presionaste un botón");
-})
+};
+boton.addEventListener("click", accion);
