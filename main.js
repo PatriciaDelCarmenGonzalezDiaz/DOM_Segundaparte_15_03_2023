@@ -11,7 +11,7 @@ boton.addEventListener("click", () => {
   });
   
   root.addEventListener("user:message", (event) => {
-    const name = event.detail.name;
-    const number = event.target.dataset.number;
+    let name = event.detail.name;
+    let number = event.target.dataset.number;
     console.log(`Mensaje recibido de ${name} (${number})`);
-  });
+  }, { capture: true });
