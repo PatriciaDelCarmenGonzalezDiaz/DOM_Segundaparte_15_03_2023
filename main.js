@@ -1,13 +1,24 @@
 let boton = document.querySelector("#btn");
-let eventManager = {
-    handleEvent: function(event) {
+class eventManager {
+    handleEvent(event) {
         if (event.type == "click") {
-            alert("Hola, Has presionado un Botón");
+            this.onClick(event.type, event.target);
         } else if (event.type == "mouseleave") {
-            alert("Adios, has abandonado el botón");
+            this.onLeave(event.type, event.target);
         }
+    }
+    
+    onClick(type, element) {
+        alert("Hola, Has presionado un Botón");
+        console.log({type, element});
+    }
+
+    onLeave(type, element) {
+        alert("Adios, has abandonado el botón");
+        console.log({type, element});
     }
 }
 
-boton.addEventListener("click",eventManager);
-boton.addEventListener("mouseleave",eventManager);
+let ev = new eventManager();
+boton.addEventListener("click",ev);
+boton.addEventListener("mouseleave",ev);
